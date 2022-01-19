@@ -14,7 +14,7 @@ docker rm -f rabbit-1
 ```
 
 # Management
-
+docker run -it --rm --net rabbits -e RABBIT_HOST=rabbit-1 -e RABBIT_PORT=5672 -e RABBIT_USERNAME=guest -e RABBIT_PASSWORD=guest  -p 80:80 sanjaygeeky/rabbitmq-publisher:v1.0.0  
 ```
 docker run -d --rm --net rabbits -p 8080:15672 -e RABBITMQ_ERLANG_COOKIE=DSHEVCXBBETJJVJWTOWT --hostname rabbit-manager --name rabbit-manager rabbitmq:3.8-management
 
